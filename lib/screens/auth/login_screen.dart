@@ -34,8 +34,12 @@ class _LoginScreenState extends State<LoginScreen> {
       final auth = Provider.of<AuthProvider>(context, listen: false);
       if (_isLogin) {
         await auth.login(_emailController.text, _passwordController.text);
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => MainScreen()));
       } else {
         await auth.login(_emailController.text, _passwordController.text);
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => MainScreen()));
       }
     } catch (e) {
       setState(() => _errorMessage = e.toString());

@@ -3,6 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:provider/provider.dart';
 // import 'package:sifter/utils.dart';
 import 'package:sifter/providers/auth_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'chat_screen.dart';
 // import 'chat_selection_screen.dart';

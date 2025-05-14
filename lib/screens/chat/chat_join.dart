@@ -121,7 +121,7 @@ class _ChatDetailsScreenState extends State<ChatDetailsScreen> {
     final String? password = _roomData?['password'];
 
     return Scaffold(
-      appBar: AppBar(title: Text(_roomData!['name'])),
+      appBar: AppBar(),
       body: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
