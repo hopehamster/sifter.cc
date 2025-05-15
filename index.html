@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sifter - Real conversations. Local trade. Human connection.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sifter connects you with real people nearby for chat and local trade.">
+<link rel="icon" type="image/png" href="assets/logo.png" sizes="32x32">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#4285F4;--grad:linear-gradient(135deg,#4285F4 0%,#7B68EE 100%);--dark:#212121;--light:#FAFAFA;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins',sans-serif;color:var(--dark);background:var(--light);line-height:1.6;}
+header{background:#fff;position:fixed;width:100%;box-shadow:0 2px 6px rgba(0,0,0,.1);padding:15px 30px;display:flex;align-items:center;justify-content:space-between;z-index:100}
+header .logo-area{display:flex;align-items:center}
+header .logo-area img{width:40px;height:40px;border-radius:8px;margin-right:10px}
+header nav a{margin-left:25px;color:var(--dark);text-decoration:none;font-weight:600}
+header nav a.btn{background:var(--grad);color:#fff;padding:8px 18px;border-radius:25px}
+.hero{background:var(--grad);color:#fff;padding:140px 0 100px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:url('assets/pattern.svg') repeat;opacity:.1}
+.hero h1{font-size:3rem;margin-bottom:20px;font-weight:700}
+.hero p{font-size:1.1rem;margin-bottom:35px;max-width:600px;margin-left:auto;margin-right:auto}
+.hero .cta a{display:inline-block;margin:10px;font-weight:600;border-radius:30px;padding:14px 26px;text-decoration:none}
+.hero .primary{background:#fff;color:var(--primary)}
+.hero .secondary{border:2px solid #fff;color:#fff}
+.hero-img img{width:320px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.badges{margin-top:40px}
+.badges img{height:60px;margin:0 10px}
+.section{padding:100px 20px;text-align:center}
+.section h2{font-size:2.4rem;margin-bottom:15px}
+.section p.lead{max-width:650px;margin:0 auto 60px;color:#555}
+.features{display:flex;flex-wrap:wrap;justify-content:center;gap:40px}
+.feature-card{background:#fff;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,.05);padding:35px;width:280px}
+.feature-card i{font-size:32px;background:var(--grad);color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+footer{background:var(--dark);color:#fff;text-align:center;padding:50px 20px;margin-top:80px}
+@media(max-width:768px){.hero h1{font-size:2.2rem}.hero-img img{width:260px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo-area">
+    <img src="assets/logo.png" alt="Sifter logo">
+    <strong>Sifter</strong>
+  </div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#signup" class="btn">Notify Me</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Real conversations. Local trade. Human connection.</h1>
+  <p>Connect with real people nearby through geofenced chat zones. Discover what's happening around you and engage with your local community.</p>
+  <div class="cta">
+    <a href="#signup" class="primary">Get Early Access</a>
+    <a href="#features" class="secondary">Learn More</a>
+  </div>
+  <div class="hero-img" style="margin-top:60px;">
+    <img src="assets/app-showcase.png" alt="App showcase">
+  </div>
+  <div class="badges">
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store badge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play badge">
+  </div>
+</section>
+
+<section class="section" id="features">
+  <h2>Why Choose Sifter?</h2>
+  <p class="lead">Sifter is designed to help you discover and connect with the people and opportunities closest to you.</p>
+  <div class="features">
+    <div class="feature-card">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3>Geofenced Chats</h3>
+      <p>Join conversations that are happening exactly where you are.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-user-secret"></i>
+      <h3>Flexible Identity</h3>
+      <p>Stay anonymous or share your profile—it's your call every time.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-exchange-alt"></i>
+      <h3>Local Market</h3>
+      <p>Buy, sell, and trade goods with neighbors—no middleman, no fees.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="signup" style="background:var(--light-gray);">
+  <h2>Be the first to know</h2>
+  <p class="lead">Sign up for early access and updates. No spam—just the good stuff.</p>
+  <form action="https://formspree.io/f/moqgjznb" method="POST" style="margin-top:30px;">
+    <input type="email" name="email" placeholder="Your email" required style="padding:12px 14px;border-radius:6px;border:none;width:260px;max-width:90%;">
+    <button type="submit" style="padding:12px 26px;border:none;border-radius:6px;background:var(--primary);color:#fff;font-weight:600;margin-left:8px;">Notify Me</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 Sifter, Inc. All rights reserved.</p>
+</footer>
+</body>
+</html>
