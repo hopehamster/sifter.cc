@@ -1,0 +1,16 @@
+{
+  "name": "sifter-website",
+  "version": "1.0.0",
+  "description": "Sifter - Real conversations. Local trade. Human connection.",
+  "scripts": {
+    "start": "live-server",
+    "build": "npm run optimize-images && npm run minify-css",
+    "optimize-images": "imagemin assets/* --out-dir=dist/assets",
+    "minify-css": "cleancss -o dist/style.min.css style.css"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "imagemin-cli": "^7.0.0",
+    "clean-css-cli": "^5.6.0"
+  }
+} 
