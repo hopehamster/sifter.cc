@@ -585,4 +585,311 @@ footer a:hover {
   border-radius: 12px;
   border: 1px solid rgba(76, 175, 80, 0.2);
   animation: fadeInUp 0.5s ease;
+}
+
+/* Circular Ripples Animation */
+.ripple-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border: 2px solid rgba(123, 31, 162, 0.3);
+  border-radius: 50%;
+  animation: rippleExpand 8s infinite linear;
+  opacity: 0;
+}
+
+.ripple-1 {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.ripple-2 {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 20%;
+  animation-delay: 2s;
+}
+
+.ripple-3 {
+  width: 80px;
+  height: 80px;
+  bottom: 30%;
+  left: 25%;
+  animation-delay: 4s;
+}
+
+.ripple-4 {
+  width: 120px;
+  height: 120px;
+  top: 40%;
+  left: 70%;
+  animation-delay: 6s;
+}
+
+.ripple-5 {
+  width: 200px;
+  height: 200px;
+  bottom: 20%;
+  right: 10%;
+  animation-delay: 1s;
+}
+
+@keyframes rippleExpand {
+  0% {
+    transform: scale(0);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Hero Section Enhancements */
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 35px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 1s ease 0.2s both;
+  line-height: 1.7;
+}
+
+/* Concept Section */
+.concept-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.concept-text h3 {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin: 40px 0 20px;
+  font-weight: 600;
+}
+
+.concept-text h3:first-child {
+  margin-top: 0;
+}
+
+.concept-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.concept-text strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.benefit-item {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.benefit-item h3 {
+  color: var(--primary);
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.benefit-item p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Enhanced Feature Cards */
+.feature-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 40px;
+  width: 320px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeInUp 1s ease;
+  text-align: left;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.feature-card i {
+  font-size: 36px;
+  background: var(--grad);
+  color: #fff;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 25px 0;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover i {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.feature-card h3 {
+  margin-bottom: 15px;
+  color: var(--primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.feature-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Enhanced Use Case Cards */
+.use-case-card {
+  text-align: left;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeInUp 1s ease;
+}
+
+.use-case-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.use-case-card i {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.use-case-card:hover i {
+  transform: scale(1.1);
+}
+
+.use-case-card h3 {
+  margin-bottom: 15px;
+  color: var(--primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.use-case-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Enhanced Typography */
+.section h2 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.section p.lead {
+  max-width: 700px;
+  margin: 0 auto 60px;
+  color: #555;
+  animation: fadeInUp 1s ease 0.2s both;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+/* Responsive Design Updates */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-img img {
+    width: 280px;
+  }
+  
+  .feature-card,
+  .use-case-card,
+  .benefit-item {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .section {
+    padding: 60px 20px;
+  }
+  
+  .section h2 {
+    font-size: 2rem;
+  }
+  
+  .concept-text h3 {
+    font-size: 1.3rem;
+  }
+  
+  .concept-text p {
+    font-size: 1rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
 } 
