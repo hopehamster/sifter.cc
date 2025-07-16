@@ -117,6 +117,31 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:50px 20px;mar
   </div>
 </section>
 
+<section class="stats-section">
+  <div class="stats-container">
+    <div class="stat-item">
+      <i class="fas fa-users"></i>
+      <div class="stat-number" data-target="5000">0</div>
+      <p>Beta Testers</p>
+    </div>
+    <div class="stat-item">
+      <i class="fas fa-map-marker-alt"></i>
+      <div class="stat-number" data-target="50">0</div>
+      <p>Cities Active</p>
+    </div>
+    <div class="stat-item">
+      <i class="fas fa-comments"></i>
+      <div class="stat-number" data-target="100000">0</div>
+      <p>Messages Sent</p>
+    </div>
+    <div class="stat-item">
+      <i class="fas fa-shield-alt"></i>
+      <div class="stat-number" data-target="100">0</div>
+      <p>% Encrypted</p>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="features">
   <h2>Core Features & Technology</h2>
   <p class="lead">Advanced geofencing technology combined with intuitive social features creates a seamless local connection experience.</p>
@@ -450,6 +475,59 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 revealElements.forEach(el => revealObserver.observe(el));
+
+// Animated Number Counter
+const animateNumbers = () => {
+  const counters = document.querySelectorAll('.stat-number');
+  const speed = 200;
+  
+  counters.forEach(counter => {
+    const animate = () => {
+      const target = +counter.getAttribute('data-target');
+      const current = +counter.innerText;
+      const increment = target / speed;
+      
+      if (current < target) {
+        counter.innerText = Math.ceil(current + increment);
+        setTimeout(animate, 1);
+      } else {
+        counter.innerText = target.toLocaleString();
+      }
+    };
+    
+    animate();
+  });
+};
+
+// Trigger number animation when stats section is in view
+const statsSection = document.querySelector('.stats-section');
+let hasAnimated = false;
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !hasAnimated) {
+      animateNumbers();
+      hasAnimated = true;
+    }
+  });
+}, { threshold: 0.5 });
+
+if (statsSection) {
+  statsObserver.observe(statsSection);
+}
+
+// Enhanced Particle Interaction
+let particleSpeed = 1;
+window.addEventListener('scroll', () => {
+  const scrolled = window.pageYOffset;
+  particleSpeed = 1 + (scrolled * 0.001);
+  
+  // Parallax effect for hero image
+  const heroImg = document.querySelector('.hero-img');
+  if (heroImg) {
+    heroImg.style.transform = `translateY(${scrolled * 0.3}px)`;
+  }
+});
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
