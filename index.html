@@ -42,6 +42,9 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:50px 20px;mar
 <!-- Animated Background -->
 <div class="animated-bg"></div>
 
+<!-- Particle Network Canvas -->
+<canvas id="particle-canvas"></canvas>
+
 <!-- Floating Particles -->
 <div class="particles">
   <div class="particle"></div>
@@ -73,7 +76,7 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:50px 20px;mar
     <a href="#concept">Concept</a>
     <a href="#features">Features</a>
     <a href="#benefits">Benefits</a>
-    <a href="#signup" class="btn">Join Waitlist</a>
+    <a href="#signup" class="btn">Join Beta</a>
   </nav>
 </header>
 
@@ -81,7 +84,7 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:50px 20px;mar
   <h1>Connect Nearby. Stay Secure. Live in the Moment.</h1>
   <p class="hero-subtitle">Sifter spins up instant, radius-based chat rooms so you can talk to the people right around you—no sign-ups, no strings attached.</p>
   <div class="cta">
-    <a href="#signup" class="primary">Get Early Access</a>
+    <a href="#signup" class="primary">Join the Beta</a>
     <a href="#concept" class="secondary">Learn How It Works</a>
   </div>
   <div class="hero-img">
@@ -213,23 +216,30 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:50px 20px;mar
 </section>
 
 <section class="signup-section" id="signup">
-  <h2>Be Part of the Local Connection Revolution</h2>
-  <p class="lead">Join thousands of early adopters who are already transforming how people connect in their communities. Be among the first to experience the future of local social networking.</p>
-  <div class="signup-container">
-    <form id="early-access-form" class="signup-form" action="https://formspree.io/f/mgvykjqa" method="POST">
-      <div style="margin-bottom: 20px;">
-        <input type="email" name="email" class="form-input" placeholder="Enter your email address" required>
-      </div>
-      <button type="submit" class="submit-btn">
-        <span class="btn-text">Get Early Access</span>
-        <span class="loading" style="display: none;"></span>
-      </button>
-    </form>
-    <p style="margin-top: 20px; color: #666; font-size: 14px;">
-      We'll notify you when Sifter launches. No spam, just one email when we're live!
+  <h2>Join the Sifter Beta Today!</h2>
+  <p class="lead">Be among the first to experience location-based connections. Limited spots available for iOS beta testers.</p>
+  <div class="beta-signup-container">
+    <a href="https://testflight.apple.com/join/mJ5cVuS7" class="beta-button" target="_blank">
+      <i class="fab fa-apple"></i>
+      <span>Join Beta on TestFlight</span>
+    </a>
+    <p class="beta-requirements">
+      <i class="fas fa-info-circle"></i>
+      Requires iOS 14+ and TestFlight app
     </p>
-    <div id="form-success" class="success-message" style="display: none;">
-      Welcome to the revolution! We'll be in touch when Sifter launches.
+    <div class="beta-features">
+      <div class="beta-feature">
+        <i class="fas fa-bolt"></i>
+        <span>Instant Access</span>
+      </div>
+      <div class="beta-feature">
+        <i class="fas fa-users"></i>
+        <span>Limited Spots</span>
+      </div>
+      <div class="beta-feature">
+        <i class="fas fa-comments"></i>
+        <span>Shape the Future</span>
+      </div>
     </div>
   </div>
 </section>
@@ -263,46 +273,109 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Enhanced form handling
-document.getElementById('early-access-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const form = this;
-  const submitButton = form.querySelector('.submit-btn');
-  const btnText = submitButton.querySelector('.btn-text');
-  const loading = submitButton.querySelector('.loading');
-  
-  // Disable button and show loading state
-  submitButton.disabled = true;
-  btnText.style.display = 'none';
-  loading.style.display = 'inline-block';
-  
-  fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: {
-      'Accept': 'application/json'
-    }
-  })
-  .then(response => {
-    if (response.ok) {
-      // Show success message
-      document.getElementById('form-success').style.display = 'block';
-      form.reset();
-    } else {
-      throw new Error('Network response was not ok');
-    }
-  })
-  .catch(error => {
-    alert('Oops! There was a problem submitting your form. Please try again.');
-  })
-  .finally(() => {
-    // Reset button state
-    submitButton.disabled = false;
-    btnText.style.display = 'inline';
-    loading.style.display = 'none';
-  });
+// Particle Network Animation
+const canvas = document.getElementById('particle-canvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+const particleCount = 80;
+const connectionDistance = 150;
+const mouseRadius = 200;
+
+let mouse = {
+  x: null,
+  y: null
+};
+
+window.addEventListener('mousemove', (e) => {
+  mouse.x = e.x;
+  mouse.y = e.y;
 });
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.vx = (Math.random() - 0.5) * 0.5;
+    this.vy = (Math.random() - 0.5) * 0.5;
+    this.radius = 2;
+  }
+
+  update() {
+    if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
+    if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+    
+    this.x += this.vx;
+    this.y += this.vy;
+  }
+
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(123, 31, 162, 0.5)';
+    ctx.fill();
+  }
+}
+
+function init() {
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  particles.forEach(particle => {
+    particle.update();
+    particle.draw();
+  });
+  
+  // Draw connections
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      
+      if (distance < connectionDistance) {
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(123, 31, 162, ${0.2 * (1 - distance / connectionDistance)})`;
+        ctx.stroke();
+      }
+    }
+    
+    // Mouse interaction
+    if (mouse.x != null && mouse.y != null) {
+      const dx = particles[i].x - mouse.x;
+      const dy = particles[i].y - mouse.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      
+      if (distance < mouseRadius) {
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.strokeStyle = `rgba(26, 35, 126, ${0.3 * (1 - distance / mouseRadius)})`;
+        ctx.stroke();
+      }
+    }
+  }
+  
+  requestAnimationFrame(animate);
+}
+
+init();
+animate();
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
