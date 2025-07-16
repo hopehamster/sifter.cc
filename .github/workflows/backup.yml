@@ -1,0 +1,25 @@
+name: Daily Backup Branch
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 6 * * *'  # daily at 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # fetch full history so we can push branch
+
+      - name: Force-update backup branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Create or reset backup-main to current commit
+          git branch -f backup-main
+          git push origin backup-main --force 

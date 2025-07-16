@@ -893,3 +893,26 @@ footer a:hover {
     grid-template-columns: 1fr;
   }
 } 
+
+/* -------------------------------------------------- */
+/* Accessibility & Contrast Tweaks (2025-05) */
+/* Ensures text stands out clearly against backgrounds */
+.concept-text p,
+.feature-card p,
+.use-case-card p,
+.benefit-item p,
+.section p.lead {
+  color: #333; /* darker grey for stronger contrast */
+}
+
+.feature-card,
+.use-case-card,
+.benefit-item {
+  background: #fff; /* solid white for max legibility */
+}
+
+.feature-card:hover,
+.use-case-card:hover,
+.benefit-item:hover {
+  background: #fff; /* maintain solid background on hover */
+} 
