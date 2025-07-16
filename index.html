@@ -80,6 +80,11 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:50px 20px;mar
   </nav>
 </header>
 
+<!-- Floating Beta Badge -->
+<a href="https://testflight.apple.com/join/mJ5cVuS7" class="beta-badge" target="_blank">
+  <i class="fas fa-rocket"></i> Beta Live!
+</a>
+
 <section class="hero">
   <h1>Connect Nearby. Stay Secure. Live in the Moment.</h1>
   <p class="hero-subtitle">Sifter spins up instant, radius-based chat rooms so you can talk to the people right around you—no sign-ups, no strings attached.</p>
@@ -376,6 +381,75 @@ function animate() {
 
 init();
 animate();
+
+// Magnetic Button Effect
+document.querySelectorAll('.hero .cta a, .beta-button').forEach(button => {
+  button.addEventListener('mousemove', (e) => {
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    
+    button.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+  });
+  
+  button.addEventListener('mouseleave', () => {
+    button.style.transform = 'translate(0, 0)';
+  });
+});
+
+// Card Tilt Effect
+document.querySelectorAll('.feature-card, .use-case-card, .benefit-item').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    
+    const tiltX = (y - 0.5) * 10;
+    const tiltY = (x - 0.5) * -10;
+    
+    card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(10px)`;
+  });
+  
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+  });
+});
+
+// Ripple Effect on Click
+document.addEventListener('click', (e) => {
+  if (e.target.matches('.hero .cta a, .beta-button')) {
+    const button = e.target;
+    const ripple = document.createElement('span');
+    ripple.className = 'ripple-effect';
+    
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+    
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    
+    button.appendChild(ripple);
+    
+    setTimeout(() => ripple.remove(), 600);
+  }
+});
+
+// Reveal Animation on Scroll
+const revealElements = document.querySelectorAll('.section h2, .section p.lead, .feature-card, .use-case-card, .benefit-item');
+revealElements.forEach(el => el.classList.add('reveal'));
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, { threshold: 0.1 });
+
+revealElements.forEach(el => revealObserver.observe(el));
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
