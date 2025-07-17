@@ -5,7 +5,7 @@
 <title>Sifter - Connect Nearby. Stay Secure. Live in the Moment.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Sifter revolutionizes local connections through geofenced chat technology. Connect with people in your immediate area for instant conversations, local trading, and spontaneous meetups.">
-<link rel="icon" type="image/png" href="assets/favicon.png" sizes="32x32">
+<link rel="icon" type="image/png" href="assets/icons/favicon-32.png" sizes="32x32">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -69,7 +69,7 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:50px 20px;mar
 
 <header>
   <div class="logo-area">
-    <img src="assets/logo.png" alt="Sifter logo">
+    <img src="assets/icons/logo-40.png" alt="Sifter logo">
     <strong>Sifter</strong>
   </div>
   <nav>
@@ -93,7 +93,7 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:50px 20px;mar
     <a href="#concept" class="secondary">Learn How It Works</a>
   </div>
   <div class="hero-img">
-    <img src="assets/app-showcase.png" alt="Sifter App Interface">
+    <img src="assets/icons/logo-512.png" alt="Sifter App Logo">
   </div>
   <div class="badges">
     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store badge">
@@ -350,7 +350,7 @@ class Particle {
   draw() {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(123, 31, 162, 0.5)';
+    ctx.fillStyle = 'rgba(124, 58, 237, 0.6)';
     ctx.fill();
   }
 }
@@ -380,7 +380,7 @@ function animate() {
         ctx.beginPath();
         ctx.moveTo(particles[i].x, particles[i].y);
         ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.strokeStyle = `rgba(123, 31, 162, ${0.2 * (1 - distance / connectionDistance)})`;
+        ctx.strokeStyle = `rgba(124, 58, 237, ${0.3 * (1 - distance / connectionDistance)})`;
         ctx.stroke();
       }
     }
@@ -395,7 +395,7 @@ function animate() {
         ctx.beginPath();
         ctx.moveTo(particles[i].x, particles[i].y);
         ctx.lineTo(mouse.x, mouse.y);
-        ctx.strokeStyle = `rgba(26, 35, 126, ${0.3 * (1 - distance / mouseRadius)})`;
+        ctx.strokeStyle = `rgba(37, 99, 235, ${0.4 * (1 - distance / mouseRadius)})`;
         ctx.stroke();
       }
     }
