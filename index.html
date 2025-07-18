@@ -42,6 +42,9 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:50px 20px;mar
 <!-- Animated Background -->
 <div class="animated-bg"></div>
 
+<!-- Geofencing Visualization -->
+<div class="geofence-container"></div>
+
 <!-- Particle Network Canvas -->
 <canvas id="particle-canvas"></canvas>
 
@@ -406,6 +409,29 @@ function animate() {
 
 init();
 animate();
+
+// Geofencing Circle Animation
+function createGeofenceCircle() {
+  const circle = document.createElement('div');
+  circle.className = 'geofence-circle';
+  
+  const size = Math.random() * 200 + 100; // Random size between 100-300px
+  circle.style.width = `${size}px`;
+  circle.style.height = `${size}px`;
+  
+  circle.style.left = `${Math.random() * 100}vw`;
+  circle.style.top = `${Math.random() * 100}vh`;
+  
+  const duration = Math.random() * 2 + 3; // 3-5 seconds
+  circle.style.animationDuration = `${duration}s`;
+  
+  document.querySelector('.geofence-container').appendChild(circle);
+  
+  setTimeout(() => circle.remove(), duration * 1000);
+}
+
+// Create circles at random intervals
+setInterval(createGeofenceCircle, 1500);
 
 // Magnetic Button Effect
 document.querySelectorAll('.hero .cta a, .beta-button').forEach(button => {

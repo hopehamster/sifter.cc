@@ -1,13 +1,13 @@
 :root {
-  --primary: #2563eb;
-  --secondary: #7c3aed;
-  --grad: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-  --grad-animated: linear-gradient(-45deg, #2563eb, #3b82f6, #7c3aed, #8b5cf6);
+  --primary: #1e3a8a;
+  --secondary: #6b21a8;
+  --grad: linear-gradient(135deg, #1e3a8a 0%, #6b21a8 100%);
+  --grad-animated: linear-gradient(-45deg, #1e3a8a, #2563eb, #6b21a8, #9333ea);
   --dark: #0f172a;
   --light: #f8fafc;
   --glass: rgba(255, 255, 255, 0.1);
-  --shadow: 0 8px 32px rgba(37, 99, 235, 0.15);
-  --shadow-hover: 0 12px 40px rgba(37, 99, 235, 0.25);
+  --shadow: 0 8px 32px rgba(30, 58, 138, 0.15);
+  --shadow-hover: 0 12px 40px rgba(30, 58, 138, 0.25);
 }
 
 * {
@@ -1300,5 +1300,44 @@ footer a:hover {
   
   #particle-canvas {
     opacity: 0.1;
+  }
+} 
+
+/* Geofencing Visualization */
+.geofence-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 0.3; /* Subtle effect */
+}
+
+.geofence-circle {
+  position: absolute;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  animation: expand-circle 4s ease-out infinite;
+  opacity: 0;
+  transform: scale(0);
+}
+
+@keyframes expand-circle {
+  0% {
+    opacity: 0.5;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
+@media (max-width: 768px) {
+  .geofence-container {
+    opacity: 0.2;
   }
 } 
