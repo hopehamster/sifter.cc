@@ -9,31 +9,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 <style>
-:root{--primary:#4285F4;--grad:linear-gradient(135deg,#4285F4 0%,#7B68EE 100%);--dark:#212121;--light:#FAFAFA;}
+:root{--rgb:(58, 33, 134);--grad:linear-gradient(135deg,#4285F4 0%,#7B68EE 100%);--dark:#212121;--light:#FAFAFA;}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Poppins',sans-serif;color:var(--dark);background:var(--light);line-height:1.6;}
-header{background:#fff;position:fixed;width:100%;box-shadow:0 2px 6px rgba(0,0,0,.1);padding:15px 30px;display:flex;align-items:center;justify-content:space-between;z-index:100}
+body{font-family:'Poppins'!important;color:var(--dark);line-height:1.6;}
+header{background:transparent !important;position:fixed;width:100%;box-shadow:0 2px 6px rgba(0,0,0,.1);padding:15px 30px;display:flex;align-items:center;justify-content:space-between;z-index:100}
 header .logo-area{display:flex;align-items:center}
 header .logo-area img{width:40px;height:40px;border-radius:8px;margin-right:10px}
-header nav a{margin-left:25px;color:var(--dark);text-decoration:none;font-weight:600}
-header nav a.btn{background:var(--grad);color:#fff;padding:8px 18px;border-radius:25px}
-.hero{background:var(--grad);color:#fff;padding:140px 0 100px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:url('assets/pattern.svg') repeat;opacity:.1}
-.hero h1{font-size:3rem;margin-bottom:20px;font-weight:700}
-.hero p{font-size:1.1rem;margin-bottom:35px;max-width:600px;margin-left:auto;margin-right:auto}
-.hero .cta a{display:inline-block;margin:10px;font-weight:600;border-radius:30px;padding:14px 26px;text-decoration:none}
-.hero .primary{background:#fff;color:var(--primary)}
-.hero .secondary{border:2px solid #fff;color:#fff}
-.hero-img img{width:320px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
-.badges{margin-top:40px}
-.badges img{height:60px;margin:0 10px}
-.section{padding:100px 20px;text-align:center}
-.section h2{font-size:2.4rem;margin-bottom:15px}
-.section p.lead{max-width:650px;margin:0 auto 60px;color:#555}
-.features{display:flex;flex-wrap:wrap;justify-content:center;gap:40px}
-.feature-card{background:#fff;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,.05);padding:35px;width:280px}
-.feature-card i{font-size:32px;background:var(--grad);color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+header nav a{margin-left:25px;color:var(--light);text-decoration:none;font-weight:600}
+header nav a.btn{background:rgb(33, 17, 83);color:#fff;padding:8px 18px;border-radius:25px}
 footer{background:var(--dark);color:#fff;text-align:center;padding:50px 20px;margin-top:80px}
 @media(max-width:768px){.hero h1{font-size:2.2rem}.hero-img img{width:260px}}
 </style>
@@ -73,169 +60,59 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:50px 20px;mar
   <div class="ripple ripple-5"></div>
 </div>
 
-<header>
-  <div class="logo-area">
+<!-- header -->
+  <header style="background-color: transparent;">
+      <div class="logo-area" data-aos="zoom-in">
     <img src="assets/icons/logo-40.png" alt="Sifter logo">
-    <strong>Sifter</strong>
-  </div>
-  <nav>
-    <a href="#concept">Concept</a>
-    <a href="#features">Features</a>
-    <a href="#benefits">Benefits</a>
-    <a href="#signup" class="btn">Join Beta</a>
-  </nav>
+      <strong>Sifter</strong>
+    </div>
+
+   <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav id="nav" data-aos="zoom-in">
+      <ul class="nav-links">
+    <li><a href="#Home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#signup" class="btn">Join Beta</a></li>
+      </ul>
+    </nav>
 </header>
+<!-- header end -->
 
 <!-- Floating Beta Badge -->
 <a href="https://testflight.apple.com/join/mJ5cVuS7" class="beta-badge" target="_blank">
   <i class="fas fa-rocket"></i> Beta Live!
 </a>
 
-<section class="hero">
-  <h1>Connect Nearby. Stay Secure. Live in the Moment.</h1>
-  <p class="hero-subtitle">Sifter spins up instant, radius-based chat rooms so you can talk to the people right around you—no sign-ups, no strings attached.</p>
-  <div class="cta">
-    <a href="#signup" class="primary">Join the Beta</a>
-    <a href="#concept" class="secondary">Learn How It Works</a>
-  </div>
+</section>
+<section class="section" id="Home" style="background: rgba(30, 58, 138, 0.25);">
   <div class="hero-img">
     <img src="assets/icons/logo-512.png" alt="Sifter App Logo">
   </div>
-  <!-- badges removed -->
-</section>
+  <h2 style="color: #fff;font-size: 3rem;"data-aos="fade-up" class="connect-heading" >Connect Where You Are, Not Just Who You Know</h2>
+  <div class="connect-text" id="about" data-aos="fade-up">
+    <p>Sifter revolutionizes digital communication by bringing conversations back to the real world through location-based chat rooms. Using advanced geofencing technology, Sifter creates virtual chat spaces tied to specific physical locations—from your favorite coffee shop to your office building. Simply open the app, and you'll instantly see active chat rooms within your immediate vicinity. Join conversations with people who are actually there with you, whether it's discussing the morning commute at the train station or coordinating with colleagues in your building. When you leave the area, you're automatically removed from the chat, ensuring conversations stay relevant and location-specific. No more endless group chats or irrelevant notifications—just meaningful conversations with people who share your physical space.
+</p>
+<h2 class="connect-benefits" style="width: 100%;margin: auto;text-align: center;margin-top: 40px;margin-bottom: 30px;font-size: 2.2rem;" data-aos="fade-up">The Benefits of Hyper-Local Communication</h2>
+<p>For personal use, Sifter transforms how you connect with your community by enabling spontaneous, authentic conversations with neighbors, fellow commuters, or people at local events. It's perfect for finding workout partners at your gym, getting restaurant recommendations from locals, or simply connecting with like-minded people in your area. Professionally, Sifter eliminates the chaos of traditional workplace messaging by creating focused, location-specific discussions that stay organized and relevant. Conference attendees can network in real-time, office teams can coordinate without cluttering company-wide channels, and remote workers can engage with local co-working spaces. By anchoring digital conversations to physical locations, Sifter reduces information overload, increases engagement quality, and creates more meaningful connections that extend beyond the screen into real-world relationships and collaborations.
 
-<section class="section" id="concept">
-  <h2>How Sifter Works</h2>
-  <div class="concept-content">
-    <div class="concept-text">
-      <h3>The Problem We're Solving</h3>
-      <p>In today's digital age, we're more connected than ever globally, yet increasingly disconnected from the people physically around us. Traditional social media platforms create echo chambers and virtual relationships, while local communities struggle to form meaningful connections.</p>
-      
-      <h3>Our Revolutionary Solution</h3>
-      <p>Sifter introduces the concept of <strong>Geofenced Social Networking</strong> - a paradigm shift that uses precise location technology to create temporary, location-specific chat rooms. When you're at a coffee shop, concert, or local event, Sifter automatically connects you with others in the same space, enabling real-time, meaningful local interactions.</p>
-      
-      <h3>The Technology Behind It</h3>
-      <p>Using advanced GPS and geofencing algorithms, Sifter creates virtual chat bubbles with customizable radii (50-500 meters). These chat rooms exist only when people are physically present, ensuring authentic, location-relevant conversations. The technology automatically manages room creation, user joining/leaving, and content moderation based on real-world presence.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="features">
-  <h2>Core Features & Technology</h2>
-  <p class="lead">Advanced geofencing technology combined with intuitive social features creates a seamless local connection experience.</p>
-  <div class="features">
-    <div class="feature-card fade-in">
-      <i class="fas fa-crosshairs"></i>
-      <h3>Precision Geofencing</h3>
-      <p>Advanced GPS technology creates chat rooms with pinpoint accuracy. Choose your radius from 50-500 meters, ensuring you connect with people in your exact vicinity. The system automatically adjusts based on your location and movement.</p>
-    </div>
-    <div class="feature-card fade-in">
-      <i class="fas fa-shield-alt"></i>
-      <h3>Guest Mode Privacy</h3>
-      <p>Jump into chats without handing over emails or phone numbers. Guest Mode keeps you in control while 256-bit encryption shields every message.</p>
-    </div>
-    <div class="feature-card fade-in">
-      <i class="fas fa-bolt"></i>
-      <h3>Instant Local Commerce</h3>
-      <p>Transform local trading with zero-fee, instant transactions. Buy, sell, or trade with neighbors without shipping delays or middleman fees. Meet up instantly for face-to-face exchanges in your local area.</p>
-    </div>
-    <div class="feature-card fade-in">
-      <i class="fas fa-users-cog"></i>
-      <h3>Intelligent Moderation</h3>
-      <p>AI-powered content filtering combined with community moderation tools. Chat creators can manage their rooms with advanced tools including message removal, user banning, and content flagging. NSFW content is automatically filtered for appropriate audiences.</p>
-    </div>
-    <div class="feature-card fade-in">
-      <i class="fas fa-mobile-alt"></i>
-      <h3>Cross-Platform Sync</h3>
-      <p>Seamless experience across iOS and Android devices. Real-time synchronization ensures you never miss a local connection opportunity. Offline mode with automatic sync when connection is restored.</p>
-    </div>
-    <div class="feature-card fade-in">
-      <i class="fas fa-chart-line"></i>
-      <h3>Community Analytics</h3>
-      <p>Track your local social impact with detailed analytics. See how many connections you've made, local events you've discovered, and community engagement metrics. Build your local social reputation over time.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="background: rgba(248, 249, 255, 0.9);">
-  <h2>Real-World Applications & Benefits</h2>
-  <div class="use-cases">
-    <div class="use-case-card fade-in">
-      <i class="fas fa-music"></i>
-      <h3>Event Networking</h3>
-      <p>At concerts, festivals, or conferences, instantly connect with fellow attendees. Share experiences, coordinate meetups, or find people with similar interests. Transform large events into intimate, connected communities.</p>
-    </div>
-    <div class="use-case-card fade-in">
-      <i class="fas fa-store"></i>
-      <h3>Local Commerce Revolution</h3>
-      <p>Eliminate shipping costs and delays in local trading. Find buyers and sellers in your immediate area for everything from furniture to electronics. Build trust through face-to-face interactions and local reputation systems.</p>
-    </div>
-    <div class="use-case-card fade-in">
-      <i class="fas fa-coffee"></i>
-      <h3>Spontaneous Socializing</h3>
-      <p>Discover people nearby for coffee, activities, or casual conversations. Break down social barriers and create meaningful connections with people you might never meet otherwise. Perfect for travelers and new residents.</p>
-    </div>
-    <div class="use-case-card fade-in">
-      <i class="fas fa-graduation-cap"></i>
-      <h3>Educational Collaboration</h3>
-      <p>Students can form study groups, share resources, and collaborate on projects with peers in their immediate area. Professors can create location-specific discussion groups for field trips or campus events.</p>
-    </div>
-    <div class="use-case-card fade-in">
-      <i class="fas fa-heart"></i>
-      <h3>Community Building</h3>
-      <p>Strengthen neighborhood bonds through local discussions, event coordination, and community support. Create hyper-local networks that foster real-world relationships and community resilience.</p>
-    </div>
-    <div class="use-case-card fade-in">
-      <i class="fas fa-briefcase"></i>
-      <h3>Professional Networking</h3>
-      <p>Connect with professionals in your industry at conferences, coworking spaces, or business districts. Share insights, find collaborators, or discover job opportunities with people in your immediate professional community.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="benefits">
-  <h2>Why Sifter Changes Everything</h2>
-  <div class="benefits-grid">
-    <div class="benefit-item fade-in">
-      <h3>Authentic Connections</h3>
-      <p>Unlike global social media, Sifter fosters genuine local relationships. Every conversation happens with people you can actually meet, creating meaningful, lasting connections in your community.</p>
-    </div>
-    <div class="benefit-item fade-in">
-      <h3>Enhanced Privacy</h3>
-      <p>Your conversations disappear when you leave the area, and personal information is optional. No permanent digital footprint, no data mining, no targeted advertising based on your local activities.</p>
-    </div>
-    <div class="benefit-item fade-in">
-      <h3>Reduced Social Anxiety</h3>
-      <p>Start conversations digitally before meeting in person. Break the ice through chat, then transition to face-to-face interactions when comfortable. Perfect for introverts and social anxiety sufferers.</p>
-    </div>
-    <div class="benefit-item fade-in">
-      <h3>Local Economic Growth</h3>
-      <p>Facilitate local commerce and support small businesses. Connect local buyers with local sellers, reducing environmental impact and strengthening local economies.</p>
-    </div>
-    <div class="benefit-item fade-in">
-      <h3>Emergency Communication</h3>
-      <p>During local emergencies or events, Sifter provides instant communication with people in your immediate area. Coordinate safety, share information, and provide mutual support during critical situations.</p>
-    </div>
-    <div class="benefit-item fade-in">
-      <h3>Cultural Exchange</h3>
-      <p>Connect with people from different backgrounds in your local area. Share cultural experiences, learn about different perspectives, and build more diverse, inclusive communities.</p>
-    </div>
+</p>
+  </div> 
   </div>
 </section>
 
 <section class="signup-section" id="signup">
-  <h2>Join the Sifter Beta Today!</h2>
-  <p class="lead">Be among the first to experience location-based connections. Limited spots available for iOS beta testers.</p>
-  <div class="beta-signup-container">
-    <a href="https://testflight.apple.com/join/mJ5cVuS7" class="beta-button" target="_blank">
+  <h2 data-aos="zoom-in" style="font-size: 2.6rem;">Join the Sifter Beta Today!</h2>
+  <p class="lead" data-aos="zoom-in">Be among the first to experience location-based connections. Limited spots available for iOS beta testers.</p>
+  <div class="beta-signup-container" >
+    <a href="https://testflight.apple.com/join/mJ5cVuS7" class="beta-button" target="_blank" data-aos="zoom-in">
       <i class="fab fa-apple"></i>
-      <span>Join Beta on TestFlight</span>
+      <span >Join Beta on TestFlight</span>
     </a>
-    <p class="beta-requirements">
+    <p class="beta-requirements" data-aos="fade-up">
       <i class="fas fa-info-circle"></i>
       Requires iOS 14+ and TestFlight app
     </p>
-    <div class="beta-features">
+    <div data-aos="fade-up" class="beta-features" >
       <div class="beta-feature">
         <i class="fas fa-bolt"></i>
         <span>Instant Access</span>
@@ -248,11 +125,19 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:50px 20px;mar
         <i class="fas fa-comments"></i>
         <span>Shape the Future</span>
       </div>
-    </div>
-  </div>
+ 
 </section>
 
+
+
 <script>
+  // navbar
+        function toggleMenu() {
+      document.getElementById('nav').classList.toggle('active');
+    }
+
+
+
 // Scroll animations
 const observerOptions = {
   threshold: 0.1,
@@ -281,11 +166,22 @@ window.addEventListener('scroll', () => {
   }
 });
 
+
+// Header scroll effect
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
 // Particle Network Animation
 const canvas = document.getElementById('particle-canvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = window.innerWidth;
+// canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const particles = [];
@@ -308,30 +204,30 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 
-class Particle {
-  constructor() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.vx = (Math.random() - 0.5) * 0.5;
-    this.vy = (Math.random() - 0.5) * 0.5;
-    this.radius = 2;
-  }
+  // class Particle {
+  //   constructor() {
+  //     this.x = Math.random() * canvas.width;
+  //     this.y = Math.random() * canvas.height;
+  //     this.vx = (Math.random() - 0.5) * 0.5;
+  //     this.vy = (Math.random() - 0.5) * 0.5;
+  //     this.radius = 2;
+  //   }
 
-  update() {
-    if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
-    if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
-    
-    this.x += this.vx;
-    this.y += this.vy;
-  }
+  //   update() {
+  //     if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
+  //     if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+      
+  //     this.x += this.vx;
+  //     this.y += this.vy;
+  //   }
 
-  draw() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(107, 33, 168, 0.6)'; // Deep violet
-    ctx.fill();
-  }
-}
+  //   draw() {
+  //     ctx.beginPath();
+  //     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+  //     ctx.fillStyle = 'rgba(107, 33, 168, 0.6)'; // Deep violet
+  //     ctx.fill();
+  //   }
+  // }
 
 function init() {
   for (let i = 0; i < particleCount; i++) {
@@ -473,7 +369,7 @@ const revealObserver = new IntersectionObserver((entries) => {
       entry.target.classList.add('active');
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.1});
 
 revealElements.forEach(el => revealObserver.observe(el));
 
@@ -564,6 +460,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 </script>
 
 <footer>
+  <hr style="margin: 30px;">
   <p>&copy; 2025 Sifter, Inc. All rights reserved.</p>
   <div style="margin-top: 20px;">
     <a href="privacy.html">Privacy Policy</a>
@@ -573,5 +470,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true     
+    });
+</script>
 </body>
 </html>
