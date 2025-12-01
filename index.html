@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
   <title>Sifter - The Chat Room for Right Here, Right Now</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Connect instantly with people physically around you. No profiles, no tracking—just secure, geofenced conversations.">
   
-  <link rel="icon" type="image/png" href="assets/icons/favicon-32.png" sizes="32x32">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="icon" type="image/png" href="assets/icons/favicon-32.png" sizes="32x32">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -23,9 +23,8 @@
         <img src="assets/icons/logo-40.png" alt="Sifter Logo">
         <span>Sifter</span>
       </a>
-      
+
       <!-- Mobile Menu Icon -->
-      <div class="hamburger"><i class="fas fa-bars"></i></div>
 
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
@@ -35,7 +34,7 @@
         <li><a href="https://testflight.apple.com/join/HSYm32MT" class="btn-glow">Join Beta</a></li>
       </ul>
     </div>
-  </header>
+</header>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -82,7 +81,7 @@
 
       </div>
     </div>
-  </section>
+</section>
 
   <!-- Social Proof Ticker -->
   <div class="social-proof">
@@ -135,9 +134,9 @@
           <h3>No Friction.</h3>
           <p>Forget QR codes, invites, or friend requests. Just open the app and talk to the room immediately.</p>
         </div>
-      </div>
-    </div>
-  </section>
+  </div> 
+  </div>
+</section>
 
   <!-- How It Works -->
   <section id="how-it-works" class="how-it-works">
@@ -192,7 +191,7 @@
         <h2>Built for the <span class="text-gradient">Real World</span></h2>
         <p>From morning coffee runs to massive conferences, Sifter unlocks the hidden layer of conversation around you.</p>
       </div>
-
+ 
       <div class="use-cases-grid">
         <div class="glass-card case-card" data-aos="fade-up">
           <h3><i class="fas fa-briefcase" style="color: var(--neon-cyan); margin-right: 10px;"></i> Conferences</h3>
@@ -222,7 +221,7 @@
         <i class="fab fa-apple"></i> Join Public Beta
       </a>
     </div>
-  </section>
+</section>
 
   <footer>
     <div class="container" style="text-align: center; color: var(--text-muted); padding-bottom: 40px;">
@@ -233,24 +232,24 @@
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-  
-  <script>
+
+<script>
     // Initialize Animate On Scroll
     AOS.init({
       duration: 800,
       once: true,
       offset: 100
-    });
+});
 
     // Header Scroll Effect
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
 
     // Simple Particle Generator
     const particleContainer = document.getElementById('particles-js');
@@ -264,6 +263,6 @@
       p.style.animationDelay = Math.random() * 5 + 's';
       particleContainer.appendChild(p);
     }
-  </script>
+</script>
 </body>
 </html>
