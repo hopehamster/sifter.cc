@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Report a Bug — Sifter Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Report a bug or issue in the Sifter iOS chat app. Help us improve by submitting problems you encounter through our support portal.">
+
+  <link rel="canonical" href="https://sifter.cc/report/">
+  <meta name="theme-color" content="#0a0a0f">
+  <meta name="apple-itunes-app" content="app-id=6590625208">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sifter">
+  <meta property="og:title" content="Report a Bug — Sifter Support">
+  <meta property="og:description" content="Report a bug or issue in the Sifter iOS chat app.">
+  <meta property="og:image" content="https://sifter.cc/assets/icons/logo-512.png">
+  <meta property="og:url" content="https://sifter.cc/report/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Report a Bug — Sifter Support">
+  <meta name="twitter:description" content="Report a bug or issue in the Sifter iOS chat app.">
+  <meta name="twitter:image" content="https://sifter.cc/assets/icons/logo-512.png">
+
+  <link rel="icon" type="image/png" href="/assets/icons/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/icons/logo-120.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Background Particles -->
+  <div class="particles" id="particles-js"></div>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="/" class="logo-area">
+        <img src="/assets/icons/logo-40.png" alt="Sifter Logo">
+        <span>Sifter</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#how-it-works">How it Works</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a href="/download" class="btn-glow">Download</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+  <!-- Report Issue Section -->
+  <section class="hero" style="min-height: 100vh; display: flex; align-items: center;">
+    <div class="container" style="text-align: center;">
+      <div class="hero-content" data-aos="fade-up" style="margin: 0 auto; max-width: 800px;">
+        <h1>Sifter Support <br><span class="text-gradient">Report a Bug</span></h1>
+        <p style="margin: 20px auto 40px;">
+          Found a glitch? Help us squash it. Submitting issues helps us make Sifter better for everyone.
+          No account required.
+        </p>
+
+        <div class="glass-card" style="display: inline-block; text-align: left; max-width: 500px; margin: 0 auto;">
+          <h2 style="color: white; margin-bottom: 15px; font-size: 1.3rem;"><i class="fas fa-bug" style="color: var(--hot-pink); margin-right: 10px;"></i> How to Report</h2>
+          <ul style="color: var(--text-muted); list-style: none; margin-bottom: 30px;">
+            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--neon-cyan); margin-right: 10px;"></i> Describe what happened vs. what you expected.</li>
+            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--neon-cyan); margin-right: 10px;"></i> Include your device model (e.g., iPhone 14 Pro).</li>
+            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--neon-cyan); margin-right: 10px;"></i> Attach screenshots if possible.</li>
+          </ul>
+
+          <div style="text-align: center;">
+            <a href="https://sifter-team.atlassian.net/servicedesk/customer/portal/1" target="_blank" rel="noopener" class="btn-glow" style="font-size: 1.2rem; padding: 18px 40px;">
+              <i class="fas fa-paper-plane"></i> Submit Bug Report
+            </a>
+          </div>
+        </div>
+
+        <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.6;">
+          You will be redirected to our support portal.
+        </p>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer>
+    <div class="container" style="text-align: center; color: var(--text-muted); padding-bottom: 40px;">
+      <p style="margin-bottom: 10px;">
+        <a href="/privacy/" style="color: var(--text-muted); text-decoration: none; margin: 0 10px;">Privacy Policy</a>
+        •
+        <a href="/terms/" style="color: var(--text-muted); text-decoration: none; margin: 0 10px;">Terms of Service</a>
+      </p>
+      <p>&copy; 2026 Sifter. All rights reserved. Made by <a href="https://www.702aiservices.com/" style="color: var(--text-muted); text-decoration: none;">702 AI Services</a>.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+
+    // Particle Generator
+    const particleContainer = document.getElementById('particles-js');
+    for (let i = 0; i < 50; i++) {
+      const p = document.createElement('div');
+      p.classList.add('particle');
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.width = Math.random() * 4 + 'px';
+      p.style.height = p.style.width;
+      p.style.animationDuration = Math.random() * 10 + 10 + 's';
+      p.style.animationDelay = Math.random() * 5 + 's';
+      particleContainer.appendChild(p);
+    }
+  </script>
+</body>
+</html>

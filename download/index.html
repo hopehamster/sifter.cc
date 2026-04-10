@@ -6,9 +6,11 @@
   <title>Download Sifter</title>
   <meta name="description" content="Download Sifter — the chat room for right here, right now. Free on the App Store.">
 
-  <!-- Instant redirect to App Store -->
+  <!-- This page is a pure redirect to the App Store — do not index it. OG tags still apply
+       so that iMessage/Slack/Twitter link previews render a branded card when sifter.cc/download
+       is shared. -->
+  <meta name="robots" content="noindex, follow">
   <meta http-equiv="refresh" content="0; url=https://apps.apple.com/us/app/sifter/id6590625208">
-  <link rel="canonical" href="https://apps.apple.com/us/app/sifter/id6590625208">
 
   <!-- Open Graph — for iMessage, Slack, Twitter, Facebook link previews -->
   <meta property="og:type" content="website">
@@ -85,6 +87,7 @@
     <h1>Taking you to the App Store…</h1>
     <p>If nothing happens in a second, tap below.</p>
     <a class="cta" href="https://apps.apple.com/us/app/sifter/id6590625208">Open App Store</a>
+    <p style="margin-top: 24px; font-size: 0.85rem;"><a href="/" style="color: #8080a0; text-decoration: none;">← Back to sifter.cc</a></p>
   </div>
 
   <!-- Fastest redirect path: runs before the body is fully parsed on modern browsers -->

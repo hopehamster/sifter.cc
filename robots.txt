@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Legacy HTML paths are thin redirect stubs kept for backward compatibility.
+# Google treats meta-refresh pages as soft redirects; disallow them anyway
+# to signal that they aren't canonical content.
+Disallow: /privacy.html
+Disallow: /terms.html
+Disallow: /report-issue.html
+
+# The /download/ page is a pure redirect to the App Store. It carries a
+# `<meta name="robots" content="noindex, follow">` tag, so we don't block
+# crawling here (crawlers need to fetch it to see the noindex signal).
+
+Sitemap: https://sifter.cc/sitemap.xml
