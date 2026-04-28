@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sifter — Location-Based Chat App for iOS | Geofenced Chat Rooms Near You</title>
-  <meta name="description" content="Sifter is a location-based chat app for iPhone. Join geofenced chat rooms near you at events, concerts, campuses, and coffee shops. Free on the App Store.">
+  <title>Sifter — Proximity Chat for iOS | Authenticated Location Chat Rooms</title>
+  <meta name="description" content="Join or create a chat room only meant for right here, right now. Sifter is authenticated proximity chat — only people physically present can join. Free on iOS 16+.">
 
   <!-- Canonical + mobile metadata -->
   <link rel="canonical" href="https://sifter.cc/">
@@ -14,8 +14,8 @@
   <!-- Open Graph (iMessage, Slack, Facebook, LinkedIn, Discord link previews) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sifter">
-  <meta property="og:title" content="Sifter — Location-Based Chat App for iOS">
-  <meta property="og:description" content="Join geofenced chat rooms near you. The chat room for right here, right now. Free on the App Store.">
+  <meta property="og:title" content="Sifter — Proximity Chat for iOS">
+  <meta property="og:description" content="Join or create a chat room only meant for right here, right now. Authenticated. Ephemeral. Tied to where you are. Free on iOS 16+.">
   <meta property="og:image" content="https://sifter.cc/assets/icons/logo-512.png">
   <meta property="og:image:width" content="512">
   <meta property="og:image:height" content="512">
@@ -25,8 +25,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sifter — Location-Based Chat App for iOS">
-  <meta name="twitter:description" content="Join geofenced chat rooms near you. Free on the App Store.">
+  <meta name="twitter:title" content="Sifter — Proximity Chat for iOS">
+  <meta name="twitter:description" content="Join or create a chat room only meant for right here, right now. Free on iOS 16+.">
   <meta name="twitter:image" content="https://sifter.cc/assets/icons/logo-512.png">
 
   <!-- Favicons -->
@@ -73,7 +73,7 @@
         "@id": "https://sifter.cc/#website",
         "url": "https://sifter.cc/",
         "name": "Sifter",
-        "description": "Location-based chat app for iOS. Geofenced chat rooms near you.",
+        "description": "Authenticated proximity chat for iOS. Join or create chat rooms only people physically present can enter.",
         "publisher": {"@id": "https://sifter.cc/#organization"},
         "inLanguage": "en-US"
       },
@@ -81,9 +81,9 @@
         "@type": "MobileApplication",
         "@id": "https://sifter.cc/#app",
         "name": "Sifter",
-        "description": "Sifter is a location-based chat app for iPhone. Create or join geofenced chat rooms anchored to real-world places — concerts, coffee shops, college campuses, and neighborhoods. Conversations are visible only to people physically inside the room's boundary.",
+        "description": "Sifter is authenticated proximity chat for iOS. Users join or create chat rooms tied to a specific physical place — only people inside the venue's geofence can see or join. Authenticated via Apple Sign-In or phone. Ephemeral by design: when you leave, you leave the chat. Free, iOS 16 or later.",
         "applicationCategory": "SocialNetworkingApplication",
-        "operatingSystem": "iOS 15.6",
+        "operatingSystem": "iOS 16",
         "downloadUrl": "https://apps.apple.com/us/app/sifter/id6590625208",
         "installUrl": "https://apps.apple.com/us/app/sifter/id6590625208",
         "offers": {
@@ -103,47 +103,55 @@
             "name": "What is Sifter?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sifter is a location-based chat app for iPhone. Users create chat rooms anchored to real-world places, and other people who are physically within the room's geofence can see and join the conversation. When you leave the area, you leave the chat."
+              "text": "Sifter is a chat-room app for iOS where every chat is tied to a specific physical place. When you walk into a bar, a festival, or a hotel lobby, you can open Sifter and join the conversation already happening there — or start one for the people around you. The chat exists for where you are, when you are there."
             }
           },
           {
             "@type": "Question",
-            "name": "How is Sifter different from a regular chat app?",
+            "name": "Who is Sifter for?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Every chat room is tied to a precise geographic boundary. You can only see and participate in rooms that you are physically standing inside. There is no remote access, no global feed, and no random pairing. Every conversation is grounded in a real place."
+              "text": "Sifter is for anyone in a place where they'd want to talk to the people physically around them but can't — Vegas tourists in a hotel lobby, festival-goers between sets, conference attendees in a hallway, college students on campus. Free on iOS 16 or later."
             }
           },
           {
             "@type": "Question",
-            "name": "Is Sifter free?",
+            "name": "How is Sifter different from Yik Yak?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Sifter is free to download on the Apple App Store and free to use. No subscription required."
+              "text": "Yik Yak was anonymous with a wide radius — that combination made it unsafe. Sifter authenticates every user (Apple Sign-In or phone) and lets the user pick the radius for their chat room (one venue, one corner, one floor). Authenticated users plus user-defined geofence makes open conversation safe."
             }
           },
           {
             "@type": "Question",
-            "name": "Do I need an account to use Sifter?",
+            "name": "How is Sifter different from a dating app?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Creating chat rooms requires a verified account — a phone number with SMS verification and a username. Some rooms allow guest access, which still requires a verified phone number but lets you appear with a limited profile."
+              "text": "Dating apps assume romantic intent up front. Sifter doesn't. The chat room exists for whoever's physically present, conversation is open-ended, and the app handles no follow-up after you leave the venue. People sometimes meet on Sifter the way they sometimes meet at a bar — incidentally, not by design."
             }
           },
           {
             "@type": "Question",
-            "name": "Does Sifter share my location with other users?",
+            "name": "How does Sifter handle privacy?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. Your precise location is used only to determine which chat rooms you are inside the boundary of. Sifter never shares your coordinates, your address, or your movements with other users."
+              "text": "Location is the privacy filter. Only people physically inside a venue's geofence can see or join its chat room. When you leave, you leave the chat. Sifter knows who you are (authentication is required), but conversations are tied to physical co-presence — not stored, not searchable, not forwarded outside the room."
             }
           },
           {
             "@type": "Question",
-            "name": "What iOS version do I need?",
+            "name": "What does Sifter cost?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sifter requires iPhone running iOS 15.6 or later."
+              "text": "Sifter is free on the iOS App Store. No in-app purchases, no ads inside chat rooms, no premium tier at launch. The app requires iOS 16 or later. Android is in development; sign up at sifter.cc to be notified when it launches."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can I download Sifter?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sifter is on the iOS App Store at sifter.cc/download. The download link redirects to the official App Store listing. iOS 16 or later required."
             }
           }
         ]
@@ -184,14 +192,14 @@
 
         <!-- Left: Text -->
         <div class="hero-content" data-aos="fade-up">
-          <h1>The Chat Room for <br><span class="text-gradient">Right Here, Right Now.</span></h1>
-          <p>Sifter is the location-based chat app that connects you with the people physically around you. Join geofenced chat rooms near you — no profile tracking, no friend requests, just secure conversations that disappear when you leave the area.</p>
+          <h1>Join or create a chat room <br><span class="text-gradient">only meant for right here, right now!</span></h1>
+          <p>Walk into a bar, a festival, a hotel lobby — open Sifter and join the chat already happening there, or start one for the people around you. Authenticated. Ephemeral. Tied to where you actually are.</p>
 
           <div class="hero-cta-group">
             <a href="/download" class="btn-glow">
               <i class="fab fa-apple"></i> Download on the App Store
             </a>
-            <p style="margin-top: 15px; font-size: 0.9rem; color: var(--text-muted);">Free on the App Store • iOS 15.6+</p>
+            <p style="margin-top: 15px; font-size: 0.9rem; color: var(--text-muted);">Free on the App Store • iOS 16+</p>
           </div>
         </div>
 
@@ -365,32 +373,37 @@
       <div style="max-width: 800px; margin: 0 auto;">
         <div class="glass-card" style="margin-bottom: 20px;" data-aos="fade-up">
           <h3 style="margin-bottom: 10px;">What is Sifter?</h3>
-          <p>Sifter is a location-based chat app for iPhone. Users create chat rooms anchored to real-world places, and other people who are physically within the room's geofence can see and join the conversation. When you leave the area, you leave the chat.</p>
+          <p>Sifter is a chat-room app for iOS where every chat is tied to a specific physical place. When you walk into a bar, a festival, or a hotel lobby, you can open Sifter and join the conversation already happening there — or start one for the people around you. The chat exists for where you are, when you are there.</p>
         </div>
 
         <div class="glass-card" style="margin-bottom: 20px;" data-aos="fade-up" data-aos-delay="50">
-          <h3 style="margin-bottom: 10px;">How is Sifter different from a regular chat app?</h3>
-          <p>Every chat room is tied to a precise geographic boundary. You can only see and participate in rooms that you are physically standing inside. There is no remote access, no global feed, and no random pairing. Every conversation is grounded in a real place.</p>
+          <h3 style="margin-bottom: 10px;">Who is Sifter for?</h3>
+          <p>Sifter is for anyone in a place where they'd want to talk to the people physically around them but can't — Vegas tourists in a hotel lobby, festival-goers between sets, conference attendees in a hallway, college students on campus. Free on iOS 16 or later.</p>
         </div>
 
         <div class="glass-card" style="margin-bottom: 20px;" data-aos="fade-up" data-aos-delay="100">
-          <h3 style="margin-bottom: 10px;">Is Sifter free?</h3>
-          <p>Yes. Sifter is free to download on the Apple App Store and free to use. No subscription required.</p>
+          <h3 style="margin-bottom: 10px;">How is Sifter different from Yik Yak?</h3>
+          <p>Yik Yak was anonymous with a wide radius — that combination made it unsafe. Sifter authenticates every user (Apple Sign-In or phone) and lets the user pick the radius for their chat room (one venue, one corner, one floor). Authenticated users plus user-defined geofence makes open conversation safe.</p>
         </div>
 
         <div class="glass-card" style="margin-bottom: 20px;" data-aos="fade-up" data-aos-delay="150">
-          <h3 style="margin-bottom: 10px;">Do I need an account to use Sifter?</h3>
-          <p>Yes. Creating chat rooms requires a verified account — a phone number with SMS verification and a username. Some rooms allow guest access, which still requires a verified phone number but lets you appear with a limited profile.</p>
+          <h3 style="margin-bottom: 10px;">How is Sifter different from a dating app?</h3>
+          <p>Dating apps assume romantic intent up front. Sifter doesn't. The chat room exists for whoever's physically present, conversation is open-ended, and the app handles no follow-up after you leave the venue. People sometimes meet on Sifter the way they sometimes meet at a bar — incidentally, not by design.</p>
         </div>
 
         <div class="glass-card" style="margin-bottom: 20px;" data-aos="fade-up" data-aos-delay="200">
-          <h3 style="margin-bottom: 10px;">Does Sifter share my location with other users?</h3>
-          <p>No. Your precise location is used only to determine which chat rooms you are inside the boundary of. Sifter never shares your coordinates, your address, or your movements with other users.</p>
+          <h3 style="margin-bottom: 10px;">How does Sifter handle privacy?</h3>
+          <p>Location is the privacy filter. Only people physically inside a venue's geofence can see or join its chat room. When you leave, you leave the chat. Sifter knows who you are (authentication is required), but conversations are tied to physical co-presence — not stored, not searchable, not forwarded outside the room.</p>
         </div>
 
         <div class="glass-card" style="margin-bottom: 20px;" data-aos="fade-up" data-aos-delay="250">
-          <h3 style="margin-bottom: 10px;">What iOS version do I need?</h3>
-          <p>Sifter requires iPhone running iOS 15.6 or later.</p>
+          <h3 style="margin-bottom: 10px;">What does Sifter cost?</h3>
+          <p>Sifter is free on the iOS App Store. No in-app purchases, no ads inside chat rooms, no premium tier at launch. The app requires iOS 16 or later. Android is in development; sign up at sifter.cc to be notified when it launches.</p>
+        </div>
+
+        <div class="glass-card" style="margin-bottom: 20px;" data-aos="fade-up" data-aos-delay="300">
+          <h3 style="margin-bottom: 10px;">Where can I download Sifter?</h3>
+          <p>Sifter is on the iOS App Store at sifter.cc/download. The download link redirects to the official App Store listing. iOS 16 or later required.</p>
         </div>
       </div>
     </div>
